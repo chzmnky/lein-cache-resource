@@ -9,9 +9,7 @@ GIT_DEST_DIR="$(mktemp -d -t git-resource-destination.XXXXXX)"
 
 cd "$GIT_DEST_DIR"
 export LEIN_SNAPSHOTS_IN_RELEASE=true
-lein pom
-[[ -f pom.xml ]] || { echo "There is no pom.xml in the git repo." >&2; exit 1; }
 
-MAVEN_REPO=$DEST_DIR mvn -B --fail-never dependency:go-offline >&2
-
+[[ -f project.clj ]] || { echo "There is no project.clj in the git repo." >&2; exit 1; }
+lein -U deps
 echo "Finished downloading files"
