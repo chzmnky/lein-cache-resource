@@ -12,5 +12,7 @@ export LEIN_SNAPSHOTS_IN_RELEASE=true
 
 [[ -f project.clj ]] || { echo "There is no project.clj in the git repo." >&2; exit 1; }
 ### lein automatically puts deps at /root/.m2/repository
+
 lein -U deps
-echo "Finished downloading files"
+
+echo "Finished downloading files" >&2; exit 1;
