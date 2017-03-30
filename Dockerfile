@@ -1,4 +1,4 @@
-FROM maven:3.3.9-jdk-8-alpine
+FROM clojure:alpine
 MAINTAINER olhtbr@gmail.com
 
 RUN apk update && \
@@ -10,8 +10,7 @@ RUN apk update && \
     unzip /opt/resource/git/git-resource.zip -d /opt/resource/git && \
     mv /opt/resource/git/git-resource-master/assets/* /opt/resource/git && \
     mv /opt/resource/git/git-resource-master/scripts/install_git_lfs.sh /opt/resource/git && \
-    rm -r /opt/resource/git/git-resource.zip /opt/resource/git/git-resource-master && \
-    bash /opt/resource/git/install_git_lfs.sh
+    rm -r /opt/resource/git/git-resource.zip /opt/resource/git/git-resource-master
 
 ADD settings.xml /usr/share/maven/conf/
 ADD check in out /opt/resource/
