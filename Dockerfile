@@ -2,7 +2,7 @@ FROM clojure:alpine
 MAINTAINER olhtbr@gmail.com
 
 RUN apk update && \
-    apk add git jq wget unzip openssh-client && \
+    apk add git jq wget unzip curl openssh-client && \
     git config --global user.email "git@localhost" && \
     git config --global user.name "git" && \
     mkdir -p /opt/resource/git && \
