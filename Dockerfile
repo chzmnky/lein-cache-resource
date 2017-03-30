@@ -10,7 +10,8 @@ RUN apk update && \
     unzip /opt/resource/git/git-resource.zip -d /opt/resource/git && \
     mv /opt/resource/git/git-resource-master/assets/* /opt/resource/git && \
     mv /opt/resource/git/git-resource-master/scripts/install_git_lfs.sh /opt/resource/git && \
-    rm -r /opt/resource/git/git-resource.zip /opt/resource/git/git-resource-master
+    rm -r /opt/resource/git/git-resource.zip /opt/resource/git/git-resource-master && \
+    bash /opt/resource/git/install_git_lfs.sh
 
 ADD settings.xml /usr/share/maven/conf/
 ADD check in out /opt/resource/
