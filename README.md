@@ -1,4 +1,4 @@
-# Leiningen Cache Resource [![Build Status](https://travis-ci.org/olhtbr/maven-cache-resource.svg?branch=master)](https://travis-ci.org/olhtbr/maven-cache-resource)
+# Leiningen Cache Resource
 A [Concourse.ci](http://concourse.ci/) resource for caching Leiningen dependencies.
 
 The approach and code is based on [gradle-cache-resource](https://github.com/projectfalcon/gradle-cache-resource).
