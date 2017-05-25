@@ -12,7 +12,7 @@ export LEIN_SNAPSHOTS_IN_RELEASE=true
 
 [[ -f project.clj ]] || { echo "There is no project.clj in the git repo." >&2; exit 1; }
 
-lein -U update-in : assoc :local-repo \""$DEST_DIR"\" -- deps >&2
+lein -U with-profile all-deps update-in : assoc :local-repo \""$DEST_DIR"\" -- deps >&2
 echo "Finished downloading files to dest dir $DEST_DIR" >&2
 
 echo Downloaded $(du -hs $DEST_DIR | cut -f1) in $(find $DEST_DIR -type f | wc -l) files. >&2
