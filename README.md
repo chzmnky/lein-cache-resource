@@ -19,4 +19,5 @@ It is advisable to track changes to the `project.clj` only, since that describes
 The source repository is first cloned using the git-resource and then dependencies are cached
 with `lein deps`.
 
+If you have multiple build profiles, you can use a (Composite Profile)[https://github.com/technomancy/leiningen/blob/master/doc/PROFILES.md#composite-profiles] to include all their deps. The composite profile should be called `:all-deps`.
 ### `out`: Not used
