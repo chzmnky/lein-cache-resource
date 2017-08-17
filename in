@@ -5,9 +5,11 @@ DEST_DIR="$1"
 
 GIT_DEST_DIR="$(mktemp -d -t git-resource-destination.XXXXXX)"
 
+project_root=($(jq -r '.source.project_root // ""' < $payload))
+
 /opt/resource/git/in "$GIT_DEST_DIR"
 
-cd "$GIT_DEST_DIR"
+cd "${GIT_DEST_DIR}/${project_root}"
 export LEIN_SNAPSHOTS_IN_RELEASE=true
 
 [[ -f project.clj ]] || { echo "There is no project.clj in the git repo." >&2; exit 1; }
